@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>beritaa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- jangan -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <!-- boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!--<link rel="stylesheet" href="sweetalert2.min.css">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.min.css">
+ 
+</head>
+<body>
+    
+   <!-- Navbar -->
+        <section class="navbar">
+            <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+                <div class="container-fluid px-lg-5 px-md-3 px-0">
+                    <div class="row" id="row-5">
+                        <div class="col-12 text-center">
+                            <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250320_124245.png" alt="logo_news" width="146" height="71" class="main-logo" />
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Icons (Search and Login) -->
+                    <div class="mobile-icons d-lg-none">
+                        <button class="btn btn-link search-icon" type="button" id="mobileSearchBtn">
+                            <i class="bi bi-search"></i>
+                        </button>
+                        <button class="btn btn-link login-icon" type="button" data-bs-toggle="modal" data-bs-target="#registrationModal">
+                            <i class="bi bi-box-arrow-in-right"></i>
+                        </button>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250320_124245.png" alt="logo_news" width="146" height="71" class="offcanvas-logo" />
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link main-nav-link active" aria-current="page" href="#home">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link main-nav-link" href="#berita">Berita terbaru</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link main-nav-link" href="#artikel">Artikel</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link main-nav-link" href="#kategori">Kategori</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link main-nav-link" href="#b_populer">Berita terpopuler</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Desktop Search and Login -->
+                    <div class="search-navbar d-none d-lg-block">
+                        <form id="searchForm" class="d-flex" role="search">
+                            <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-primary" type="submit">Cari</button>
+                        </form>
+                    </div>
+                    
+                    <div class="login-navbar ms-3 d-none d-lg-block">
+                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#registrationModal">Masuk</button>
+                    </div>
+                    
+                    <!-- form-search mobile -->
+                    <div class="mobile-search-form d-lg-none" id="mobileSearchForm" style="display: none;">
+                        <form id="mobileSearchFormInner" class="d-flex" role="search">
+                            <input id="mobileSearchInput" class="form-control me-2" type="search" placeholder="Cari" aria-label="Search">
+                            <button class="btn btn-outline-primary" type="submit">Cari</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </section>
+        
+        <!--modal-->
+        <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="registrationModalLabel">Form Pendaftaran</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="registrationForm">
+                            <div class="mb-3">
+                                <label for="full-name" class="col-form-label">Nama Lengkap:</label>
+                                <input type="text" class="form-control" id="full-name" placeholder="Masukkan nama lengkap" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="col-form-label">Email:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Masukkan email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="col-form-label">Password:</label>
+                                <input type="password" class="form-control" id="password" placeholder="Masukkan password" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="cancelButton">Batal</button>
+                        <button type="button" class="btn btn-primary" id="registerButton">Daftar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            
+            document.getElementById('cancelButton').addEventListener('click', function() {
+                Swal.fire({
+                    title: 'Batal',
+                    text: 'Anda menekan tombol Batal. Form pendaftaran akan ditutup.',
+                    icon: 'info',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // tutup modal
+                        const modal = bootstrap.Modal.getInstance(document.getElementById('registrationModal'));
+                        modal.hide();
+                    }
+                });
+            });
+        
+            
+            document.getElementById('registerButton').addEventListener('click', function() {
+                // validasi form 
+                const fullName = document.getElementById('full-name').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+        
+                if (fullName && email && password) {
+                    Swal.fire({
+                        title: 'Berhasil!',
+                        text: 'Pendaftaran berhasil! Terima kasih telah mendaftar.',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            const modal = bootstrap.Modal.getInstance(document.getElementById('registrationModal'));
+                            modal.hide();
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Harap lengkapi semua field sebelum mendaftar.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            });
+            
+// Scroll Spy Implementation (Old School JavaScript)
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all sections and nav links
+    var sections = document.querySelectorAll('section[id]');
+    var navLinks = document.querySelectorAll('.main-nav-link');
+    var lastId;
+    var cur = [];
+    
+    // Function to handle scroll event
+    function scrollSpy() {
+        var fromTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Highlight the current section in nav
+        sections.forEach(function(section) {
+            var sectionTop = section.offsetTop - 100;
+            var sectionHeight = section.offsetHeight;
+            var sectionId = section.getAttribute('id');
+            
+            if (fromTop >= sectionTop && fromTop < sectionTop + sectionHeight) {
+                // Remove active class from all links
+                navLinks.forEach(function(link) {
+                    link.classList.remove('active');
+                });
+                
+                // Add active class to current link
+                var currentLink = document.querySelector('.main-nav-link[href="#' + sectionId + '"]');
+                if (currentLink) {
+                    currentLink.classList.add('active');
+                }
+            }
+        });
+    }
+    
+    // Smooth scrolling for anchor links
+    function smoothScroll(target) {
+        var element = document.querySelector(target);
+        if (element) {
+            var headerOffset = 100; // Adjust this value based on your header height
+            var elementPosition = element.getBoundingClientRect().top;
+            var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+    
+    // Add click event to all nav links
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = this.getAttribute('href');
+            
+            // Close offcanvas if open (for mobile)
+            var offcanvas = document.getElementById('offcanvasNavbar');
+            if (offcanvas && offcanvas.classList.contains('show')) {
+                var bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas);
+                if (bsOffcanvas) {
+                    bsOffcanvas.hide();
+                }
+            }
+            
+            smoothScroll(target);
+        });
+    });
+    
+    window.addEventListener('scroll', function() {
+        scrollSpy();
+    });
+    
+    scrollSpy();
+});
+        </script>
+        
+<script>
+
+</script>
+
+   
+   
+      <!-- Banner -->
+    <section class="banner" id="home">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+            <!-- skeleton -->
+                <div class="carousel-item active">
+                    <div class="carousel-skeleton">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-caption">
+                            <div class="skeleton-title"></div>
+                            <div class="skeleton-text"></div>
+                            <div class="skeleton-buttons">
+                                <div class="skeleton-button"></div>
+                                <div class="skeleton-button"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250415_150418.jpeg" class="d-block w-100 carousel-image" alt="Slide 1" loading="lazy" onload="this.parentNode.parentNode.querySelector('.carousel-skeleton').style.display='none'">
+                    </div>
+                    <div class="carousel-caption">
+                        <h1 class="carousel-title text-left">Jumbo Jadi Film Animasi Asia Tenggara Terlaris Sepanjang Masa</h1>
+                        <p class="carousel-isi text-left">Jumbo menjadi film animasi Asia Tenggara terlaris sepanjang masa. Film animasi Indonesia tersebut telah mengumpulkan lebih dari US$8 juta hanya dari box office lokal..</p>
+                        <div class="gap-2 d-md-block carousel-buttons">
+                            <a href="https://www.cnnindonesia.com/hiburan/20250415120255-220-1218924/jumbo-jadi-film-animasi-asia-tenggara-terlaris-sepanjang-masa" class="btn carousel-button" target="_blank">Selengkapnya</a>
+                            <a href="#berita" class="btn carousel-button-one">Berita lainnya</a>
+                        </div>
+                    </div>
+                </div>
+            <!-- 2 -->
+                <div class="carousel-item">
+                    <div class="carousel-skeleton">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-caption">
+                            <div class="skeleton-title"></div>
+                            <div class="skeleton-text"></div>
+                            <div class="skeleton-buttons">
+                                <div class="skeleton-button"></div>
+                                <div class="skeleton-button"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250415_092231.jpeg" class="d-block w-100 carousel-image" alt="Slide 1" loading="lazy" onload="this.parentNode.parentNode.querySelector('.carousel-skeleton').style.display='none'">
+                    </div>
+                    <div class="carousel-caption">
+                        <h1 class="carousel-title text-left">Kemenpora Cairkan Dana Platnas 13 Cabor, Total Rp420 Miliar</h1>
+                        <p class="carousel-isi text-left">Kemenpora mencairkan dana pemusatan latihan terhadap 13 cabang olahraga dan dua kejuaraan dunia dengan total Rp420 miliar. Penandatanganan dokumen bantuan pemerintah terhadap pengurus cabor dilakukan di Kantor Kemenpora, Jakarta, Senin (14/4) </p>
+                        <div class="gap-2 d-md-block carousel-buttons">
+                            <a href="https://www.cnnindonesia.com/olahraga/20250414144006-178-1218599/kemenpora-cairkan-dana-pelatnas-13-cabor-total-rp420-miliar" class="btn carousel-button" target="_blank">Selengkapnya</a>
+                            <a href="#berita" class="btn carousel-button-one">Berita lainnya</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 3 -->
+                <div class="carousel-item">
+                    <div class="carousel-skeleton">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-caption">
+                            <div class="skeleton-title"></div>
+                            <div class="skeleton-text"></div>
+                            <div class="skeleton-buttons">
+                                <div class="skeleton-button"></div>
+                                <div class="skeleton-button"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250415_092209.jpeg" class="d-block w-100 carousel-image" alt="Slide 2" loading="lazy" onload="this.parentNode.parentNode.querySelector('.carousel-skeleton').style.display='none'">
+                    </div>
+                    <div class="carousel-caption">
+                        <h1 class="carousel-title text-left">Indonesia Jadi Tuan Rumah Forum Pariwisata Global CAP-CSA 2025</h1>
+                        <p class="carousel-isi">Indonesia dipastikan siap menjadi tuan rumah ajang Joint Commission Meeting untuk Komisi Asia Timur dan Pasifik (CAP) dan Komisi Asia Selatan (CSA) ke-37 yang akan digelar di Hotel Mulia Senayan Jakarta pada 15-16 April 2025.</p>
+                        <div class="gap-2 d-md-block carousel-buttons">
+                            <a href="https://www.cnnindonesia.com/ekonomi/20250414194432-625-1218718/indonesia-jadi-tuan-rumah-forum-pariwisata-global-cap-csa-2025" class="btn carousel-button" target="_blank">Selengkapnya</a>
+                            <a href="#berita" class="btn carousel-button-one">Berita lainnya</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    
+<style>
+    /* CSS untuk membuat teks rata kiri */
+.carousel-caption.text-left {
+    text-align: left;
+    left: 5%;
+    right: auto;
+    padding: 20px;
+    bottom: 20px;
+    max-width: 600px; /* Sesuaikan dengan kebutuhan */
+}
+
+.carousel-title {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.carousel-isi {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.carousel-buttons {
+    display: flex;
+    justify-content: flex-start; /* Tombol rata kiri */
+    gap: 10px;
+}
+
+/* Jika menggunakan Bootstrap, Anda bisa gunakan class built-in */
+.text-left {
+    text-align: left !important;
+}
+
+/* Untuk responsif di mobile */
+@media (max-width: 768px) {
+    .carousel-caption.text-left {
+        left: 10px;
+        right: 10px;
+        max-width: 100%;
+    }
+}
+</style>
+
+<script>
+// Fallback untuk browser yang tidak support loading="lazy"
+document.addEventListener('DOMContentLoaded', function() {
+    var images = document.querySelectorAll('.carousel-image');
+    
+    images.forEach(function(img) {
+        if(img.complete) {
+            // Jika gambar sudah di-cache browser
+            img.parentNode.querySelector('.carousel-skeleton').style.display = 'none';
+        } else {
+            // Fallback timeout jika gambar gagal dimuat
+            img.onerror = function() {
+                this.parentNode.querySelector('.carousel-skeleton').style.display = 'none';
+            };
+        }
+    });
+});
+</script>
+        
+    <!--marquee-->
+        <div class="run-section">
+            <div class="breaking-news">
+                <span>Breaking News</span>
+            </div>
+            <div class="marquee-overlay"></div> 
+            <div class="marquee">
+                <span id="marqueeText">Loading...</span>
+            </div>
+        </div>
+                        
+        <section id="berita" class="py-5">
+            <div class="container mt-4">
+                <div class="banner-content">
+                    <h2>Berita Terbaru</h2>
+                </div>
+                <div id="news-container" class="row g-3 berita-baru">
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="skeleton skeleton-image"></div>
+                            <div class="card-body">
+                                <div class="skeleton skeleton-title"></div>
+                                <div class="skeleton skeleton-text"></div>
+                                <div class="skeleton skeleton-text"></div>
+                            </div>
+                            <div class="card-footer">
+                                 <div class="skeleton skeleton-button"></div>
+                                 <div class="skeleton bi bi-bookmark bookmark-icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="skeleton skeleton-image"></div>
+                            <div class="card-body">
+                                <div class="skeleton skeleton-title"></div>
+                                <div class="skeleton skeleton-text"></div>
+                                <div class="skeleton skeleton-text"></div>
+                            </div>
+                            <div class="card-footer">
+                                 <div class="skeleton skeleton-button"></div>
+                                 <div class="skeleton bi bi-bookmark bookmark-icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="skeleton skeleton-image"></div>
+                            <div class="card-body">
+                                <div class="skeleton skeleton-title"></div>
+                                <div class="skeleton skeleton-text"></div>
+                                <div class="skeleton skeleton-text"></div>
+                            </div>
+                            <div class="card-footer">
+                                 <div class="skeleton skeleton-button"></div>
+                                 <div class="skeleton bi bi-bookmark bookmark-icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="skeleton skeleton-image"></div>
+                            <div class="card-body">
+                                <div class="skeleton skeleton-title"></div>
+                                <div class="skeleton skeleton-text"></div>
+                                <div class="skeleton skeleton-text"></div>
+                            </div>
+                            <div class="card-footer">
+                                 <div class="skeleton skeleton-button"></div>
+                                 <div class="skeleton bi bi-bookmark bookmark-icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="skeleton skeleton-image"></div>
+                            <div class="card-body">
+                                <div class="skeleton skeleton-title"></div>
+                                <div class="skeleton skeleton-text"></div>
+                                <div class="skeleton skeleton-text"></div>
+                            </div>
+                            <div class="card-footer">
+                                 <div class="skeleton skeleton-button"></div>
+                                 <div class="skeleton bi bi-bookmark bookmark-icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="skeleton skeleton-image"></div>
+                            <div class="card-body">
+                                <div class="skeleton skeleton-title"></div>
+                                <div class="skeleton skeleton-text"></div>
+                                <div class="skeleton skeleton-text"></div>
+                            </div>
+                            <div class="card-footer">
+                                 <div class="skeleton skeleton-button"></div>
+                                 <div class="skeleton bi bi-bookmark bookmark-icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                     
+                     
+                </div>
+                <div id="news-container" class="row"></div>
+                    <nav id="pagination" aria-label="Page navigation">
+                        <ul class="pagination justify-content-center"></ul>
+                    </nav>
+                </div>
+        </section>
+        
+    <!--artikel-->
+        <section id="artikel" class="artikel">
+            <div class="container mt-4">
+                <div class="banner-content">
+                    <h1 class="title-section-artikel">Artikel</h1>
+                </div>
+                <div class="row">
+                    <!-- maulai -->
+                    <div id="card-container-artikel" class="col-md-9">
+                        <div class="col-md-12 mb-4">
+                            <div class="card-artikel">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="img-artikel">
+                                            <div class="skeleton skeleton-image"></div>
+                                            <div class="skeleton skeleton-text"></div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div class="card-body-artikel">
+                                                <div class="title-artikel">
+                                                    <div class="skeleton skeleton-text"></div>
+                                                </div>
+                                                <div class="meta-artikel">
+                                                    <div class="skeleton skeleton-icon"></div>
+                                                </div>
+                                                <div class="sub-artikel">
+                                                    <div class="skeleton skeleton-text"></div>
+                                                </div>
+                                                <div class="skeleton skeleton-button"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    
+            <!-- Search Bar -->
+                    <div class="col-md-3 mobile-sidebar">
+                        <div class="search-bar mobile-search">
+                            <input type="text" id="search" class="form-control" placeholder="Cari artikel...">
+                            <button class="btn btn-sm btn-primary">Cari</button>
+                        </div>
+                        
+                        <div class="outlet-list mobile-outlet-list shape-rekomen" id="outlet-list">
+                            <h2 class="satu mobile-section-title">Artikel Terpopuler</h2>
+                            <a href="artikell3">
+                            <div class="outlet-item mobile-outlet-item">
+                                <div class="outlet-image mobile-outlet-image">
+                                    <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250416_145834.jpeg" alt="berita1">
+                                </div>
+                                <div class="outlet-content mobile-outlet-content">
+                                    <h5 class="mobile-outlet-title">How to spot the 2025 Lyrids and Eta Aquarids meteor showers</h5>
+                                    <p class="outlet-date mobile-outlet-date">
+                                        <i class="bi bi-calendar"></i> 15 April 2025
+                                    </p>
+                                </div>
+
+                            </div>
+                            </a>
+                            <a href="artikell3">
+                            <div class="outlet-item mobile-outlet-item">
+                                <div class="outlet-image mobile-outlet-image">
+                                    <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250416_135554.png" alt="berita2">
+                                </div>
+                                <div class="outlet-content mobile-outlet-content">
+                                    <h5 class="mobile-outlet-title">China vows ‘resolute and effective measures’ after Trump’s 104% tariffs take effect</h5>
+                                    <p class="outlet-date mobile-outlet-date">
+                                        <i class="bi bi-calendar"></i> 8 April 2025
+                                    </p>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="kategori mt-4 mobile-kategori">
+                            <h2 class="satu mobile-section-title">Kategori</h2>
+                            <div class="list-kategori mobile-list-kategori">
+                                <ul class="mobile-kategori-list" style="list-style-type:disc;">
+                                    <li class="list-li mobile-list-li">Healty</li>
+                                    <li class="list-li mobile-list-li">Science</li>
+                                    <li class="list-li mobile-list-li">Bussiness</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        
+<!--kategori-->
+    <section id="kategori" class="kategori-tabs py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h1 class="section-title">Kategori Berita</h1>
+                <div class="divider mx-auto my-3 bg-primary"></div>
+                <p class="section-subtitle">Jelajahi Berita Berdasarkan Topik Favoritmu</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-categories shadow-sm">
+                        <!-- tabs -->
+                        <div class="tab-header">
+                            <div class="tab-buttons">
+                                <button class="tab-button active" onclick="changeTab('berita-utama')">Berita Utama</button>
+                                <button class="tab-button" onclick="changeTab('nasional')">Nasional</button>
+                                <button class="tab-button" onclick="changeTab('internasional')">Internasional</button>
+                                <button class="tab-button" onclick="changeTab('ekonomi')">Ekonomi</button>
+                                <button class="tab-button" onclick="changeTab('olahraga')">Olahraga</button>
+                            </div>
+                        </div>
+                        
+                        <!-- isi 1 -->
+                        <div class="tab-content">
+                            <div id="berita-utama" class="tab-pane active">
+                                <div class="row" id="berita-utama-content">
+                                    <div class="col-12 text-center py-4">
+                                        <div class="spinner-border text-primary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <p>Memuat berita...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="nasional" class="tab-pane">
+                            <div class="row" id="nasional-content">
+                                <!--js-->
+                            </div>
+                        </div>
+                        
+                            
+                            <div id="internasional" class="tab-pane">
+                                <div class="row" id="internasional-content">
+                                    <!-- js -->
+                                </div>
+                            </div>
+                            
+                            <div id="ekonomi" class="tab-pane">
+                                <div class="row" id="ekonomi-content">
+                                    <!-- js -->
+                                </div>
+                            </div>
+                            
+                            <div id="olahraga" class="tab-pane">
+                                <div class="row" id="olahraga-content">
+                                    <!-- js -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<style>
+  
+.skeleton-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.skeleton-img {
+    height: 180px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+.skeleton-line {
+    height: 12px;
+    background: #f0f0f0;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    animation: shimmer 1.5s infinite;
+}
+
+.skeleton-btn {
+    width: 120px;
+    height: 30px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Enhanced card styles */
+.news-card-kategori {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.news-card-kategori:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.news-card-kategori .card-img-top {
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.news-card-kategori:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.news-card-kategori .card-body {
+    padding: 1.25rem;
+}
+
+.news-card-kategori .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color 0.2s ease;
+}
+
+.news-card-kategori:hover .card-title {
+    color: #0972b1;
+}
+
+.news-card-kategori .card-date {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.news-card-kategori .card-footer {
+    background: white;
+    border-top: none;
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bookmark-icon {
+    color: #6c757d;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+}
+
+.bookmark-icon:hover {
+    color: #0972b1;
+    transform: scale(1.1);
+}
+
+.bookmark-icon.active {
+    color: #0972b1;
+    fill: #0972b1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    .news-card-kategori .card-img-top {
+        height: 150px;
+    }
+    
+    .news-card-kategori .card-title {
+        font-size: 1rem;
+        -webkit-line-clamp: 2;
+    }
+    .news-card-kategori {
+        margin-bottom: 15px;
+    }
+}
+
+</style>
+    
+<!--berita terpopuler-->
+    <section id="b_populer" class="berita-terpopuler py-5 bg-light">
+        <div class="container">
+            <div class="section-header mb-5 text-center">
+                <h1 class="section-title">Berita Terpopuler</h1>
+                <div class="divider mx-auto my-3 bg-primary"></div>
+                <p class="section-subtitle">Jangan Lewatkan Berita yang Sedang Trending</p>
+            </div>
+            
+            <div class="row g-4">
+               
+    
+                <div class="col-lg-8 ">
+                    <div class="card card-main-news h-100">
+                        <div class="main-popular">
+                            <div class="position-relative">
+                                <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250415_150418.jpeg" class="img-fluid w-100 main-news-img" alt="Berita Utama">
+                                <div class="badge-overlay">
+                                    <span class="badge badge-coral">Trending #1</span>
+                                </div>
+                            </div>
+                            
+                            <div class="card-body">
+                                
+                                <div class="news-meta">
+                                    <p class="main-card-icon">
+                                        <i class="bi bi-calendar"></i> 15 April 2025
+                                    </p>
+                                    <p class="main-card-icon2">
+                                        <i class="bi bi-eye-fill"></i> 2.4k Dilihat
+                                    </p>
+                                </div>
+                                <h4 class="card-title-main">Jumbo Jadi Film Animasi Asia Tenggara Terlaris Sepanjang Masa</h4>
+                                <p class="card-text text-secondary">
+                                    Jumbo menjadi film animasi Asia Tenggara terlaris sepanjang masa. Film animasi Indonesia tersebut telah mengumpulkan lebih dari US$8 juta hanya dari box office lokal..
+                                </p>
+                                <a href="https://www.cnnindonesia.com/hiburan/20250415120255-220-1218924/jumbo-jadi-film-animasi-asia-tenggara-terlaris-sepanjang-masa" class="btn btn-barita-terpopuler" target="_blank">Baca Selengkapnya</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- kanan -->
+                <div class="col-lg-4">
+                    <div class="card card-popular-news border-0 shadow-sm mb-4">
+                        <div class="row g-0 row-p2">
+                            <div class="col-md-4">
+                                <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250415_105807.png" class="img-fluid h-100 popular-news-img" alt="Berita Populer 2">
+                            </div>
+                            <div class="col-md-8">
+                                <a href="https://www.cnnindonesia.com/olahraga/20250415102614-142-1218861/piala-asia-u-17-final-panas-korea-selatan-vs-korea-utara-bisa-terjadi" class="link-artikel-2" target="_blank">
+                                <div class="card-body">
+                                    <span class="badge badge-orange mb-2">Trending #2</span>
+                                    <h5 class="card-title sub-terpopuler">Piala Asia U-17: Final Panas Korea Selatan vs Korea Utara Bisa Terjadi</h5>
+                                    <p class="card-text-bt sub-terpopuler">Dua tim yang sudah lolos ke semifinal yakni Korea Selatan dan Korea Utara berpotensi bentrok di partai final Piala Asia U-17 2025..</p>
+                                    <div class="news-meta">
+                                        <small class="text-muted2"><i class="bi bi-eye-fill"></i> 1.6k</small>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card card-popular-news border-0 shadow-sm mb-4">
+                        <div class="row g-0 row-p2">
+                            <div class="col-md-4">
+                                <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250415_092231.jpeg" class="img-fluid h-100 popular-news-img" alt="Berita Populer 2">
+                            </div>
+                            <div class="col-md-8">
+                                <a href="https://www.cnnindonesia.com/olahraga/20250414144006-178-1218599/kemenpora-cairkan-dana-pelatnas-13-cabor-total-rp420-miliar" class="link-artikel-2" target="_blank">
+                                <div class="card-body">
+                                    <span class="badge badge-gold mb-2">Trending #3</span>
+                                    <h5 class="card-title sub-terpopuler">Kemenpora Cairkan Dana Platnas 13 Cabor, Total Rp420 Miliar</h5>
+                                    <p class="card-text-bt sub-terpopuler">Kemenpora mencairkan dana pemusatan latihan terhadap 13 cabang olahraga dan dua kejuaraan dunia dengan total Rp420 miliar..</p>
+                                    <div class="news-meta">
+                                        <small class="text-muted2"><i class="bi bi-eye-fill"></i> 1.6k</small>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card card-popular-news border-0 shadow-sm mb-4">
+                        <div class="row g-0 row-p2">
+                            <div class="col-md-4">
+                                <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250415_092209.jpeg" class="img-fluid h-100 popular-news-img" alt="Berita Populer 2">
+                            </div>
+                            <div class="col-md-8">
+                                <a href="https://www.cnnindonesia.com/ekonomi/20250414194432-625-1218718/indonesia-jadi-tuan-rumah-forum-pariwisata-global-cap-csa-2025" class="link-artikel-2" target="_blank">
+                                <div class="card-body">
+                                    <span class="badge badge-blue mb-2">Trending #4</span>
+                                    <h5 class="card-title sub-terpopuler">Indonesia Jadi Tuan Rumah Forum Pariwisata Global CAP-CSA 2025</h5>
+                                    <p class="card-text-bt sub-terpopuler">Indonesia dipastikan siap menjadi tuan rumah ajang Joint Commission Meeting untuk Komisi Asia Timur dan Pasifik (CAP)..</p>
+                                    <div class="news-meta">
+                                        <small class="text-muted2"><i class="bi bi-eye-fill"></i> 1.6k</small>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+    </section>
+    
+    <!--FOOTER-->
+    <section class="footer">
+        <div class="container py-5">
+            <div class="row align-items-start">
+                <!-- mulai -->
+                <div class="col-md-6 footer-logo d-flex flex-column mb-4 mb-md-0">
+                    <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250328_084909.png" alt="logo_news" class="footer-logo-img mb-3" />
+                    <p class="footer-deskripsi">
+                        <strong>Afsin News</strong> adalah portal berita online yang menyajikan informasi terkini, akurat, dan beragam dari dunia politik, ekonomi, teknologi, hingga gaya hidup. Kami berkomitmen menjadi sumber berita terpercaya yang memberikan wawasan cerdas dan relevan bagi para pembaca. Tetap terhubung dengan kabar terbaru bersama Afsin News!
+                    </p>
+                </div>
+                <div class="col-md-3 two-footer footer-kontak mb-4 mb-md-0">
+                    <h5>Tautan Cepat</h5>
+                    <ul class="nav flex-column">
+                        <li><a href="Main-page">Beranda</a></li>
+                        <li><a href="about-afsin">Tentang Kami</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-kontak mb-4 mb-md-0">
+                    <h5>Tautan Cepat</h5>
+                    <ul class="nav flex-column">
+                        <li><a href="Main-page">Beranda</a></li>
+                        <li><a href="about-afsin">Tentang Kami</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- garis -->
+            <hr class="my-4" />
+            
+            <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center py-3">
+                <div class="col-12 col-md-auto order-2 order-md-1 text-center text-md-start mb-md-0 footer-company" >
+                    <span class="text-white-50">&copy; <span id="current-year">2025</span> Afsin. All Rights Reserved.</span>
+                </div>
+                
+                <div class="col-12 col-md-auto order-1 order-md-2 text-center mb-md-0 footer-sosmed">
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/educagamelab" class="medsos-link "  target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/gamelab.id" class="medsos-link "  target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/gamelab-indonesia/" class="medsos-link " target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/@gamelabindonesia" class="medsos-link " target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  
+
+
+<style>
+    .medsos-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        transition: all 0.3s ease;
+    }
+    
+    .medsos-link:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+        color: white;
+        text-decoration: none;
+    }
+    
+    .text-white-50 {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+</style>
+
+<style>
+    .skeleton-card {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* background per section*/
+    #berita {
+        background-color: #f8f9fa;
+    }
+
+    #artikel {
+        background-image: url("https://www.gamelab.id/uploads/report/project_21278/21278_20250417_144348.png");
+        padding: 60px 0;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    #artikel::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(0px);
+        z-index: 0;
+    }
+
+    #artikel .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    #kategori {
+        background-color: #f8f9fa;
+        padding: 60px 0;
+    }
+
+    #b_populer {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 60px 0;
+    }
+
+    .footer {
+        background-color: #343a40;
+        color: white;
+    }
+
+</style>
+
+
+        <!-- progress bar -->
+    <div class="progress-bar-container">
+      <div class="progress-bar"></div>
+    </div>
+    
+    
+    
+    
+    
+    <!-- progress circle -->
+    <div class="progress-circle-container">
+      <svg class="progress-circle" viewBox="0 0 100 100">
+        <circle class="progress-background" cx="50" cy="50" r="45"></circle>
+        <circle class="progress-circle-bar" cx="50" cy="50" r="45"></circle>
+      </svg>
+      <div class="scroll-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+      </div>
+    </div>
+
+
+        
+    
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    
+    
+</body>
+</html>
