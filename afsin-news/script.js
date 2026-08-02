@@ -195,7 +195,7 @@ const berita = [
         deskripsi: "Plant-based preserves have become an increasingly popular choice among foodies and health-conscious eaters. In addition to offering delicious flavors, plant-based preserves also have the advantage of being long-lasting, allowing them to be stored for long periods of time without losing their quality.",
         gambar: "https://cdnwpedutorenews.gramedia.net/wp-content/uploads/2024/12/06090836/Screenshot-2024-12-06-090755-810x519.png",
         tanggal: "22 Maret 2025",
-        link: "artikell1"
+        link: "artikel1/index1.html"
     },
     {
         id: 2,
@@ -204,7 +204,7 @@ const berita = [
         deskripsi: "The Lyrids result from pieces of debris from the Thatcher comet interacting with Earth’s atmosphere and eventually disintegrating to become the bright streaks of light we see in the night sky. The meteor shower’s radiant – the spot in the night sky from which the meteors appear to radiate – is in the northern-hemisphere constellation Lyra, which contains the bright star Vega. People have been spotting the Lyrids for at least 2700 years. “The Lyrids are maybe the smallest of the major showers,” says Margaret Campbell-Brownat Western University in Canada. “The rates are not as high as most other meteor showers, but they do sometimes have a lot of bright meteors.”",
         gambar: "https://www.gamelab.id/uploads/report/project_21278/21278_20250416_145834.jpeg",
         tanggal: "15 April 2025",
-        link: "artikell3"
+        link: "artikel1"
     },
     {
         id: 3,

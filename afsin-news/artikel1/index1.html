@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>beritaa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- jangan -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style1.css">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <!-- boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!--sweetalert2-->
+    <!--<link rel="stylesheet" href="sweetalert2.min.css">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.min.css">
+
+</head>
+<body>
+    
+  <!-- Navbar -->
+        <section class="navbar">
+            <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+                <div class="container-fluid px-lg-5 px-md-3 px-0">
+                    <div class="row" id="row-5">
+                        <div class="col-12 text-center">
+                            <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250320_124245.png" alt="logo_news" width="146" height="71" class="main-logo" />
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-icons d-lg-none">
+                        <!--</button>-->
+                        <button class="btn btn-link login-icon" type="button" data-bs-toggle="modal" data-bs-target="#registrationModal">
+                            <i class="bi bi-box-arrow-in-right"></i>
+                        </button>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250320_124245.png" alt="logo_news" width="146" height="71" class="offcanvas-logo" />
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link main-nav-link" aria-current="page" href="Main_page">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link main-nav-link" href="https://www.gamelab.id/project/21278/preview_web/22-berita#berita">Berita terbaru</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link main-nav-link" href="https://www.gamelab.id/project/21278/preview_web/22-berita#artikel">Artikel</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link main-nav-link" href="https://www.gamelab.id/project/21278/preview_web/22-berita#kategori">Kategori</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link main-nav-link" href="https://www.gamelab.id/project/21278/preview_web/22-berita#b_populer">Berita terpopuler</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Desktop Search and Login -->
+                    <!--<div class="search-navbar d-none d-lg-block">-->
+                    <!--    <form id="searchForm" class="d-flex" role="search">-->
+                    <!--        <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+                    <!--        <button class="btn btn-outline-primary" type="submit">Cari</button>-->
+                    <!--    </form>-->
+                    <!--</div>-->
+                    
+                    <div class="login-navbar ms-3 d-none d-lg-block">
+                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#registrationModal">Masuk</button>
+                    </div>
+                    
+                    <!-- form-search mobile -->
+                    <!--<div class="mobile-search-form d-lg-none" id="mobileSearchForm" style="display: none;">-->
+                    <!--    <form id="mobileSearchFormInner" class="d-flex" role="search">-->
+                    <!--        <input id="mobileSearchInput" class="form-control me-2" type="search" placeholder="Cari" aria-label="Search">-->
+                    <!--        <button class="btn btn-outline-primary" type="submit">Cari</button>-->
+                    <!--    </form>-->
+                    <!--</div>-->
+                </div>
+            </nav>
+        </section>
+  
+        
+        <!--modal-->
+        <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="registrationModalLabel">Form Pendaftaran</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="registrationForm">
+                            <div class="mb-3">
+                                <label for="full-name" class="col-form-label">Nama Lengkap:</label>
+                                <input type="text" class="form-control" id="full-name" placeholder="Masukkan nama lengkap" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="col-form-label">Email:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Masukkan email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="col-form-label">Password:</label>
+                                <input type="password" class="form-control" id="password" placeholder="Masukkan password" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="cancelButton">Batal</button>
+                        <button type="button" class="btn btn-primary" id="registerButton">Daftar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            
+            document.getElementById('cancelButton').addEventListener('click', function() {
+                Swal.fire({
+                    title: 'Batal',
+                    text: 'Anda menekan tombol Batal. Form pendaftaran akan ditutup.',
+                    icon: 'info',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // tutup modal
+                        const modal = bootstrap.Modal.getInstance(document.getElementById('registrationModal'));
+                        modal.hide();
+                    }
+                });
+            });
+        
+            
+            document.getElementById('registerButton').addEventListener('click', function() {
+                // validasi form 
+                const fullName = document.getElementById('full-name').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+        
+                if (fullName && email && password) {
+                    Swal.fire({
+                        title: 'Berhasil!',
+                        text: 'Pendaftaran berhasil! Terima kasih telah mendaftar.',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            const modal = bootstrap.Modal.getInstance(document.getElementById('registrationModal'));
+                            modal.hide();
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Harap lengkapi semua field sebelum mendaftar.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            });
+        </script>        
+        <style>
+        .artikel-1 {
+            background-image: url('https://www.gamelab.id/uploads/report/project_21278/21278_20250325_160537.png');
+        }
+        .artikel-1 .breadcrumb {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            font-family: 'poppins', sans-serif;
+        }
+
+        .artikel-1 .nav .breadcrumb-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .artikel-1 .nav .breadcrumb-item + .breadcrumb-item::before {
+            margin: 0 8px;
+            color: #888;
+        }
+
+        .artikel-1 .breadcrumb-item a {
+            text-decoration: none;
+            color: blue;
+        }
+        
+        .artikel-1 .title-artikel h6{
+            text-align: center;
+            padding: 30px 20px 5px 20px;
+            color: #808080;
+            
+        }
+        .artikel-1 .title-artikel h2{
+            text-align: center;
+            padding: 0px 20px 20px 20px;
+            font-weight: bold;
+            font-family: 'lexand', sans-serif;
+            font-weight: bold;
+        }
+        
+        /*.follow {*/
+        /*    background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1124&q=100');*/
+        /*    background-position: center;*/
+        /*}*/
+
+        /*.card {*/
+        /*    backdrop-filter: blur(16px) saturate(180%);*/
+        /*    -webkit-backdrop-filter: blur(16px) saturate(180%);*/
+        /*    background-color: rgba(255, 255, 255, 0.75);*/
+        /*    border-radius: 12px;*/
+        /*    border: 1px solid rgba(209, 213, 219, 0.3);*/
+        /*}*/
+        
+        .background-jumb {
+            /*background-image: url("data:image/svg+xml,%3Csvg id='patternId' width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='a' patternUnits='userSpaceOnUse' width='160' height='160' patternTransform='scale(2) rotate(0)'%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='%23f2f2f2ff'/%3E%3Cpath d='M121.5 39.5V9.169c0-2.827 1.724-4.707 3.473-5.602l.707-.362c2.086-1.068 4.702-.631 6.359 1.026l1.985 1.985c1.349 1.349 3.235 2.018 5.14 2.128 12.336 0 12.336-18.505 0-18.505M40.75 39.499V9.17c0-2.827-1.724-4.707-3.473-5.602l-.707-.362c-2.086-1.068-4.702-.631-6.359 1.026l-1.985 1.985c-1.349 1.349-3.236 2.018-5.14 2.128-12.336 0-12.336-18.505 0-18.505m146.575 111.248c0-12.337-18.505-12.337-18.505 0 .11 1.904.78 3.79 2.128 5.139l1.985 1.985c1.657 1.657 2.094 4.273 1.026 6.36l-.362.706c-.895 1.75-2.775 3.474-5.602 3.474l-30.33-.001m49.66-63.086c0 12.336-18.505 12.336-18.505 0 .11-1.904.78-3.791 2.128-5.14l1.985-1.985c1.657-1.657 2.094-4.273 1.026-6.359l-.362-.707c-.895-1.749-2.775-3.474-5.602-3.473h-30.33m19.162 130.344c12.337 0 12.337-18.505 0-18.505-1.631 0-3.99.98-5.139 2.128l-1.985 1.985c-1.656 1.656-4.274 2.094-6.36 1.027l-.706-.362c-2.086-1.069-3.474-3.258-3.474-5.602v-34.302l.001-26.228c0-2.344-1.427-4.458-3.473-5.602l-.707-.361a5.83 5.83 0 00-6.36 1.026l-1.984 1.985c-1.144 1.152-3.508 2.128-5.14 2.128-12.336 0-12.336-18.505 0-18.505 1.904.11 3.715.86 5.14 2.128l1.985 1.985a5.812 5.812 0 006.359 1.026l.707-.362c1.287-1.485 3.473-2.775 3.473-5.602v-30.33M23.086 168.343c-12.336 0-12.336-18.505 0-18.505 1.632 0 3.992.98 5.14 2.128l1.985 1.985c1.656 1.656 4.274 2.094 6.359 1.027l.707-.362c2.086-1.069 3.474-3.258 3.474-5.602l-.001-34.302V88.485c0-2.344 1.387-4.533 3.473-5.602l.707-.361c2.085-1.068 4.703-.63 6.359 1.026l1.985 1.985c1.148 1.148 3.508 2.128 5.14 2.128 12.336 0 12.336-18.505 0-18.505-1.905.11-3.791.78-5.14 2.128l-1.985 1.985c-1.657 1.657-4.273 2.094-6.36 1.026l-.706-.362c-1.75-.895-3.474-2.775-3.474-5.602v-30.33m80.75 80.749H91.17c-2.827 0-4.707 1.724-5.602 3.473l-.362.707c-1.068 2.086-.631 4.702 1.026 6.359l1.985 1.985c1.349 1.349 2.018 3.236 2.128 5.14 0 12.336-18.505 12.336-18.505 0 0-1.632.98-3.992 2.128-5.14l1.985-1.985c1.656-1.656 2.094-4.274 1.026-6.359l-.361-.707c-1.069-2.086-3.258-3.474-5.602-3.473h-60.53c-2.344 0-4.533-1.387-5.602-3.473l-.362-.707c-1.067-2.085-.63-4.703 1.027-6.359l1.985-1.985c1.148-1.148 2.128-3.508 2.128-5.14 0-12.336-18.505-12.336-18.505 0M121.5 38H91.169c-2.827 0-4.707-1.724-5.602-3.473l-.362-.707c-1.068-2.086-.631-4.702 1.026-6.359l1.985-1.985c1.349-1.349 2.018-3.235 2.128-5.14C90.344 8 71.84 8 71.84 20.337c0 1.632.977 3.994 2.128 5.14.663.66 1.343 1.305 1.985 1.985 1.608 1.703 2.003 4.23 1.026 6.36-.11.24-.233.474-.361.706C75.48 36.577 73.359 38 71.015 38H36.712L10.485 38c-2.344 0-4.533 1.387-5.602 3.473-.12.236-.24.471-.362.707-1.067 2.085-.63 4.703 1.027 6.36l1.985 1.984c1.148 1.148 2.128 3.508 2.128 5.14C9.66 68-8.844 68-8.844 55.664' stroke-width='1' stroke='%230972b1ff' fill='none'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='800%25' height='800%25' transform='translate(0,0)' fill='url(%23a)'/%3E%3C/svg%3E");*/
+            background-image: url('https://www.gamelab.id/uploads/report/project_21278/21278_20250326_084208.png');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+
+        }
+        
+        .background-jumb .cus-jumb {
+            backdrop-filter: blur(6px) saturate(102%);
+            -webkit-backdrop-filter: blur(6px) saturate(102%);
+            background-color: rgba(255, 255, 255, 0.87);
+            border-radius: 12px;
+            border: 1px solid rgba(209, 213, 219, 0.3);
+            min-width: 335px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /*.background-jumb .cus-jumb {*/
+        /*    backdrop-filter: blur(6px) saturate(102%);*/
+        /*    -webkit-backdrop-filter: blur(6px) saturate(102%);*/
+        /*    background-color: rgba(255, 255, 255, 0.87);*/
+        /*    border-radius: 12px;*/
+        /*    border: 1px solid rgba(209, 213, 219, 0.3);*/
+        /*    min-width: 135px;*/
+        /*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+        /*}*/
+        
+        .list-group-item {
+            margin-bottom: 1rem;
+        }
+        
+        .follow-btn {
+            padding: 6px 12px;
+            font-size: 0.875rem;
+            border-radius: 8px;
+        }
+        
+        
+        .title-follow{
+        padding: 20px 0 10px 0;
+        /*padding: 10px 0 10px 0;*/
+        font-family: 'lexand', sans-serif;
+        }
+        
+        .fs-6 {
+        font-family: 'lexand', sans-serif;
+        }
+        
+        .circle-img {
+            width: 48px;              
+            height: 48px;              
+            object-fit: cover;        
+            border-radius: 50%;
+            margin: 0 0 4px 0;
+        }
+
+        /*artikel2*/
+        .title-artikel2{
+            font-family: 'lexand', sans-serif;
+        }
+        
+        .title-content{
+            font-weight: bold;
+        }
+        
+    .spasi {
+    margin-left: 20px;
+  }
+
+  .numbered-paragraph {
+    text-align: justify;
+    margin-left: 15px;
+  }
+
+  .numbered-paragraph strong::before {
+    counter-increment: section;  /* Penomoran otomatis */
+    content: counters(section, ".") ". ";  /* Tampilkan penomoran berjenjang */
+    font-weight: bold;
+  }
+
+  ol {
+    counter-reset: section; /* Reset angka setiap daftar baru */
+  }
+        .custom-list {
+    counter-reset: section; 
+  }
+
+  .custom-list li {
+    list-style: none;
+  }
+
+  .custom-list li::before {
+    counter-increment: section; /* Menambahkan penomoran */
+    content: counters(section, ".") ". "; /* Menampilkan angka berjenjang */
+  }
+
+  .custom-list a {
+    text-decoration: none; 
+    color: #000;
+  }
+  .form-commentar button{
+    font-family: 'lexand', sans-serif !important; 
+    }
+    
+    .comment-link-wrapper a {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px; 
+      text-decoration: none;
+      color: inherit;
+    }
+
+            
+        #news-container .card {
+            /*margin-bottom: 1rem;*/
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            transition: transform 0.2s ease-in-out;
+        }
+        
+        #news-container .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        #news-container .card img {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        #news-container .card-body {
+            padding: 8px 10px 5px 10px;
+        }
+        
+        #news-container .card-title {
+            font-size: 16px;
+            /*font-weight: bold;*/
+            margin-bottom: 0.3rem;
+            font-family: 'lexand', Sans-Serif;
+        }
+        
+        #news-container .card-text {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        
+        #news-container .text-muted {
+            font-size: 0.8rem;
+            color: #777;
+            margin: 0 0 5px;
+        }
+        
+        /* Table of Contents (TOC) */
+        #btn-cm{
+            border:1px solid #dadada;
+            border-radius:5px;
+            background-color: #edf6ff;
+            
+        }
+        #btn_toc{
+            font-weight:700;
+            cursor:pointer;
+            margin:10px
+            
+        }
+        #btn_toc:focus,#toc li:focus,.back_toc:focus{outline:none}
+        #btn_toc svg{vertical-align:middle}
+        #toc li{cursor:pointer}
+        #toc{display:grid}
+        .back_toc{cursor:pointer;text-align:right}
+        :target::before{content:"";display:block;height:40px;margin-top:-40px;visibility:hidden}
+        
+        
+        #btn_toc {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        color: #000;
+        font-weight: bold;
+      }
+
+  #toc {
+    margin-top: 10px;
+  }
+
+  #toc ol {
+    counter-reset: section; 
+  }
+
+  #toc li {
+    list-style: none; 
+  }
+
+  #toc li::before {
+    counter-increment: section;
+    content: counters(section, ".") ". "; /* penomoran bertingkat, misalnya 1.1, 1.2 */
+    /*font-weight: bold;*/
+  }
+
+  #toc a {
+    text-decoration: none;
+    color: #000 ; 
+  }
+
+  #toc a:hover {
+    color: #007BFF; 
+  }
+
+        
+        .title-artikel{
+            font-family: 'poppins', Sans-Serif;
+        }
+        
+        .img-artikel img{
+            height: 350px;
+            width: 490px;
+            padding: 0 0 20px 0;
+        }
+        
+        .isi-berita1{
+            font-family: 'nunito', Sans-Serif;
+            padding: 10px 40px 10px 40px;
+        }
+        
+        /*artikel2*/
+        
+        .berita-pilihan {
+            border-radius: 5px;
+            /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+        }
+
+        .title-artikel2 {
+            font-size: 1.5rem;
+            /*font-weight: bold;*/
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .post-date{
+            font-size:14px;
+        }
+        
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        .background-jumb .cus-jumb {
+            backdrop-filter: blur(6px) saturate(102%);
+            -webkit-backdrop-filter: blur(6px) saturate(102%);
+            background-color: rgba(255, 255, 255, 0.87);
+            border-radius: 12px;
+            border: 1px solid rgba(209, 213, 219, 0.3);
+            min-width: 135px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .artikel-1 .breadcrumb{
+        padding: 14px 0px 0px 0px;
+        }
+        
+        .artikel-1 .title-artikel h2{
+        font-size:24px; 
+        }
+        
+        .artikel-1 .title-follow h4{
+        font-size: 20px;
+        padding: 10px 7px 0px 7px;
+        }
+        
+        .circle-img{
+        width: 40px;
+        height: 40px;
+        }
+        
+        .artikel-1 .list-group-item .row .col-auto{
+        padding-right: 5px !important;
+        }
+        
+        .artikel-1 .list-group-item .row .small.text-muted{
+        display: none;
+        }
+        
+        .artikel-1 .follow .btn.follow-btn{
+        font-size: 12.5px;
+        padding: 4px;
+        border-radius: 5px;
+        }
+        
+        .artikel-1 .list-group-item .col.text-end{
+        padding: 0px 8px 0px 6px !important;  
+        }
+        
+        
+        .berita-baru .new-api-artikel .card h4{
+        font-size: 20px;
+        }
+        
+        .berita-baru .new-api-artikel .card.beritaa-rekomen .card-body small{
+        display:none;
+        }
+        #news-container .card-body {
+            padding: 8px 7px 5px 7px;
+        }
+        .beritaa-rekomen .card-body .link-artikel{
+        font-size:13px ;
+        }
+        .img-artikel img{
+        height: 230px;
+        width: 250px;
+        }
+        
+        .isi-berita1 p{
+        font-size: 15px;
+        }
+        .title-content{
+        font-weight: bold;
+        font-size: 18px;
+        }
+
+        .numbered-paragraph{
+        font-size: 15px;
+        }
+
+        .custom-list{
+        font-size: 15px;
+        }
+        
+        .leave-comment-link, .berita_icon_link{
+        font-size: 13px;
+        }
+        #toc li{
+        font-size: 15px;
+        }
+        .bawah-isi span{
+        font-size:13px !important; 
+        }
+        .comment-title{
+        font-size: 20px; 
+        }
+        
+        .comments h4{
+        font-size: 20px; 
+        }
+        .form-commentar button{
+        font-size: 15px !important; 
+        font-family: 'lexand', sans-serif !important; 
+        }
+        .comment-text p{
+        font-size: 15px; 
+        }
+
+        .artikel-populer-img {
+            height: 66px !important;
+          }
+          
+        .custom-article-title {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /*min-height: 48px; */
+        }
+        .custom-article-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .custom-article-body {
+            flex: 1;
+        }
+        .artikel-1 .row .col-md-4{
+        padding-right: 0px !important; 
+        }
+        
+        .artikel-1 .row .col-md-8{
+        padding-left: 0px !important; 
+        }
+        .artikel-1 .title-artikel h6 {
+            font-size: 14px;
+        }
+
+
+
+    }
+
+@media (max-width: 767.98px){
+.isi-berita1 p{
+font-size: 15px;
+}
+#toc{
+font-size: 15px;
+padding: 0 10px 0 0;
+}
+.title-content{
+font-weight: bold;
+font-size: 18px;
+}
+
+.numbered-paragraph{
+text-align: justify;
+/* margin-left: 15px; */
+font-size: 15px;
+}
+.custom-list{
+counter-reset: section;
+font-size: 15px;
+}
+.bawah-isi span{
+font-size: 12px;
+}
+.comment-title{
+Font-size:20px;
+}
+.comments h4{
+Font-size:20px;
+}
+
+.comment-text p{
+Font-size:15px;
+}
+.artikel-1 .breadcrumb{
+padding: 25px 15px 0px 15px; 
+}
+
+.img-artikel img{
+height: 190px;
+width: 200px;
+}
+.title-artikel h2{
+Font-size: 20px;
+}
+
+.title-follow h4{
+font-size: 20px;
+/*padding: 15px 0 0 0;*/
+}
+.title-artikel2{
+font-size: 20px;
+padding: 20px 0; 
+}
+.date-details{
+Font-size: 14px;
+}
+.form-commentar button{
+font-size: 15px !important; 
+}
+.post-date{
+    font-size:13px;
+}
+.follow-btn {
+    width: 100%;
+    text-align: center;
+}
+.kategori-up{
+    font-size: 14px;
+}
+.artikel-populer-img {
+    height: 150px !important;
+}
+}
+
+        </style>
+        
+        <!--progres-bar-->
+        
+        <!--<div class="progress-bar-container">-->
+        <!--  <div class="progress-bar"></div>-->
+        <!--</div>-->
+        
+        
+        <section class="artikel-1 py-5">
+            <div class="container">
+                <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="Main-page">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Artikel</li>
+                    </ol>
+                </nav>
+                
+                <!--<div class="title-artikel">-->
+                <!--    <h2>Preserved Vegetable Food: Delicious, Long-Lasting, and Healthy</h2>-->
+                <!--</div>-->
+                <div class="row mt-4">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="title-artikel">
+                                <h6 class="kategori-up">Health - Agriculture</h6>
+                                <h2>Preserved Vegetable Food: Delicious, Long-Lasting, and Healthy</h2>
+                            </div>
+                            <div class="img-artikel d-flex justify-content-center">
+                                <img src="https://cdnwpedutorenews.gramedia.net/wp-content/uploads/2024/12/06090836/Screenshot-2024-12-06-090755-810x519.png" alt="image artikel" class="">
+                            </div>
+                            <div class="isi-berita1">
+                                <p style="text-align:justify;">
+                                    <span class="spasi">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    Plant-based preserves have become an increasingly popular choice among foodies and health-conscious eaters. In addition to offering delicious flavors, plant-based preserves also have the advantage of being long-lasting, allowing them to be stored for long periods of time without losing their quality.
+                                    &nbsp;
+                                </p>
+                                <p style="text-align:justify;">
+                                    <span class="spasi">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    The preservation process, which includes techniques such as drying, fermentation, and canning, not only extends the shelf life of foods but also increases their nutritional value and imparts unique, appealing flavors. This article will discuss the various types of plant-based preserves, their benefits, and processing methods that can help Grameds add variety to their daily menu.
+                                &nbsp;
+                                </p>
+                                
+                                <!--table of content-->
+                            
+                                <div id="btn-cm">
+                                <div id="btn_toc" onclick="if (document.getElementById('toc').style.display === 'none') { document.getElementById('toc').style.display = 'block'; } else { document.getElementById('toc').style.display = 'none'; }" role="button" tabindex="0">
+                                    Contents 
+                                <!--<svg width="18" height="18" viewBox="0 0 24 24"><path fill="#000000" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z" /></svg>-->
+                                </div>
+                                <div id="toc">
+                                <ol>
+                                  <li><a href="#toc_1" title="What is Preserved Vegetable Food?">What is Preserved Vegetable Food?</a></li>
+                                  <li><a href="#toc_2" title="Examples of Preserved Vegetable Food">Examples of Preserved Vegetable Food</a></li>
+                                  <li><a href="#toc_3" title="Benefits of Preserved Vegetable Food for Health">Benefits of Preserved Vegetable Food for Health</a></li>
+                                  <li><a href="#toc_4" title="Preservation Methods">Preservation Methods</a></li>
+                                  <li><a href="#toc_5" title="Conclusion">Conclusion</a></li>
+                                </ol>
+                                </div>
+                                </div>
+    
+                                
+                            <!--satu-->
+                            <br/>
+                                <h5 id="toc_1" class="title-content">What is Preserved Vegetable Food?</h5>
+                                <p style="text-align:justify;">
+                                    <span class="spasi">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    Plant-based preserved foods are food products derived from plant-based ingredients, such as vegetables, fruits, grains, and nuts, that have undergone a preservation process to extend shelf life and maintain nutritional quality. This preservation aims to prevent damage caused by microorganisms, enzymes, or other environmental factors, so that the food can be enjoyed for a longer time without losing flavor, texture, or nutritional value.
+                                    &nbsp;
+                                </p>
+                                
+                            <!--dua-->
+                            <br/>
+                                <h5 id="toc_2" class="title-content">Examples of Preserved Vegetable Food</h5>
+                                <p style="text-align:justify;">
+                                    <span class="spasi">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    Preserved vegetable foods are the processed products of vegetable materials to extend their shelf life and maintain freshness. Various preservation techniques can be applied, and here are some examples of popular preserved vegetable foods:
+                                </p>
+                                <ol>
+                                    <li class="numbered-paragraph">
+                                        <strong>Pickled Vegetables</strong>  
+                                        One of the most common forms of preservation, pickled vegetables are made by soaking vegetables in a mixture of vinegar, salt, and spices. Well-known examples include pickled cucumbers, pickled onions, and kimchi (Korean pickled vegetables).
+                                    </li>
+                                
+                                    <li class="numbered-paragraph">
+                                        <strong>Dried Fruits</strong>  
+                                        The drying process removes the water content from the fruit, thus inhibiting the growth of microbes. Some examples of popular dried fruits are raisins (dried grapes), dried apricots, and dried mangoes. These fruits are often used as healthy snacks or as additional ingredients in foods.
+                                    </li>
+                                
+                                    <li class="numbered-paragraph">
+                                        <strong>Preserved Legumes</strong>  
+                                        Legumes such as soybeans, mung beans, and red beans can be preserved through the drying or canning process. For example, soybeans can be processed into tempeh, while mung beans can be used to make sprouts.
+                                    </li>
+                                
+                                    <li class="numbered-paragraph">
+                                        <strong>Fermented Foods</strong>  
+                                        The fermentation process not only preserves food but also increases its nutritional value. Examples of well-known fermented foods include tempeh, tofu, and miso. These foods are rich in protein and probiotics that are good for digestion.
+                                    </li>
+                                
+                                    <li class="numbered-paragraph">
+                                        <strong>Sauces and Pastes</strong>  
+                                        Some vegetables are also preserved in the form of sauces or pastes. Common examples include tomato paste, chili sauce, and pesto. These products are often used in everyday cooking and add flavor to dishes.
+                                    </li>
+                                
+                                    <li class="numbered-paragraph">
+                                        <strong>Frozen Vegetables</strong>  
+                                        Freezing is a modern way to preserve vegetables. Vegetables such as broccoli, carrots, and corn are often frozen after the blanching process, thus retaining their flavor and nutritional value.
+                                    </li>
+                                </ol>
+                                
+                                <p style="text-align:justify;">
+                                    <span class="spasi">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    With the various examples of preserved vegetable foods above, we can see that preservation not only increases shelf life but also enriches the variety and flavor of food. These foods are not only delicious but also provide significant health benefits.
+                                </p>
+                                <!--<br/>-->
+                                
+                            <!--tiga-->
+                            <br/>
+                                <h5 id="toc_3" class="title-content">What is Preserved Vegetable Food?</h5>
+                                <p style="text-align:justify;">
+                                    <span class="spasi">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    Makanan awetan  nabati menawarkan beragam manfaat kesehatan yang tidak dapat diabaikan. Berikut adalah beberapa manfaat utama yang dapat diperoleh dari mengonsumsi makanan awetan nabati:
+                                </p>
+                                <ol class="custom-list">
+                                  <li><a>nutritional source</a></li>
+                                  <li><a>Improved immune system</a></li>
+                                  <li><a>Supports healthy digestion</a></li>
+                                  <li><a>Manages weight </a></li>
+                                  <li><a>Maintains heart health</a></li>
+                                  <li><a>Prevents chronic diseases</a></li>
+                                </ol>
+                                <!--<br/>-->
+                                
+                            <!--empat-->
+                            <br/>
+                                <h5 id="toc_4" class="title-content">Preservation methods</h5>
+                                <p style="text-align:justify;">
+                                    <span class="spasi">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    Plant-based preserved foods are an essential process to increase shelf life, maintain quality, and prevent spoilage. Various preservation methods can be applied, each with its own advantages and disadvantages. Here are some commonly used preservation methods:
+                                </p>
+                                <ol class="custom-list">
+                                  <li><a>Drying </a></li>
+                                  <li><a>Fermentation </a></li>
+                                  <li><a>Salting</a></li>
+                                  <li><a>Canning </a></li>
+                                  <li><a>Freezing</a></li>
+                                </ol>
+                                <!--<br/>-->
+                              
+                                
+                            <!--lima-->
+                            <br/>
+                                <h5 id="toc_5" class="title-content">Conclusion</h5>
+                                <p style="text-align:justify;">
+                                    <span class="spasi">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    Plant-based preserved foods offer both deliciousness and convenience, making them an attractive option for many people. Moreover, they make a significant contribution to health and food sustainability. Using methods such as drying, fermentation, and canning, the nutritional content of vegetables and fruits can be maintained, making them available throughout the year to meet the nutritional needs of the community.
+                                </p>
+                                
+                                <p style="text-align:justify;">
+                                    <span class="spasi">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    Awareness of the importance of a healthy and environmentally friendly diet is increasing, and plant-based preserved foods are a relevant solution. Not only does it help reduce food waste, but it also supports a greener diet by making maximum use of harvested produce. This is in line with efforts to create a more sustainable and environmentally friendly food system.
+                                </p>
+                                <p style="text-align:justify;">
+                                    <span class="spasi">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    The diversity of plant-based preserved foods opens up opportunities for exploring interesting and healthy flavors. By choosing these foods, we are not only maintaining our own health, but also contributing to preserving the earth for future generations. Let's make plant-based preserved foods a part of our lifestyle for a better future.
+        
+                                <p class="bawah-isi">
+                                    <span><i class='bx bx-calendar'></i> 22 Maret 2025</span>
+                                    <span class="comment-link-wrapper">
+                                      <a href="#comment-form" class="leave-comment-link">
+                                        <i class="bi bi-chat-dots"></i> Tinggalkan Komentar
+                                      </a>
+                                    </span>
+
+                                </p>
+                                <!--<br/>-->
+                            </div>
+                            </div>
+                            
+                            <!--<div class="comment-editor">-->
+                            <!--    <h4>Tinggalkan Komentar</h4>-->
+                            <!--    <form id="comment-form">-->
+                            <!--      <textarea class="comment-input" placeholder="Write your comment here..." required></textarea>-->
+                            <!--      <button type="submit" class="submit-btn">Submit Comment</button>-->
+                            <!--    </form>-->
+                            <!--  </div>-->
+                            <!--</div>-->
+                        
+                        <div class="author-box">
+                            <div class="author-content">
+                                <div class="form-commentar">
+                                <h3 class="comment-title">Tinggalkan Komentar</h3>
+                                <form id="comment-form">
+                                  <textarea class="comment-input" placeholder="Tulis komentar di sini..." required></textarea>
+                                  <button type="submit" class="submit-btn">Kirim Komentar</button>
+                                </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="author-box">    
+                            <div class="comments-section">
+                              <div class="comments">
+                                <h4>Komentar Terbaru</h4>
+                                <div id="comments-container">
+                                  <div class="comment">
+                                    <div class="comment-user">
+                                      <div class="avatar">
+                                        <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250324_143918.jpg"  alt="User Avatar">
+                                      </div>
+                                      <span class="user-details">
+                                        <span class="username">Hansa</span> <span>•</span> <span class="post-date">25 Maret 2025</span>
+                                      </span>
+                                    </div>
+                                    <div class="comment-text">
+                                      <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                                    </div>
+                                  </div>
+                            
+                            
+                                  <div class="comment">
+                                    <div class="comment-user">
+                                      <div class="avatar">
+                                        <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250324_111921.jpg" alt="User Avatar">
+                                      </div>
+                                      <span class="user-details">
+                                        <span class="username">Ganesha</span> <span>•</span> <span class="post-date">23 Maret 2025</span>
+                                      </span>
+                                    </div>
+                                    <div class="comment-text">
+                                      <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            
+                        </div>
+
+                                
+                        <!--</div>-->
+    
+                    </div>
+                    <div class="col-md-4">
+                        <div class="follow">
+                            <div lc-helper="background" class="background-jumb container-fluid py-5 mb-4 d-flex justify-content-center">
+                                <div class="cus-jumb mt-4 mb-4 lc-block col-xxl-7 col-lg-8 col-12">
+                                    <div class="lc-block">
+                                        <div class="title-follow text-center">
+                                            <h4>Penulis Unggulan</h4>
+                                        </div>
+                                        <div editable="rich">
+                                            <!-- Item 1 -->
+                                            <li class="list-group-item bg-transparent border-bottom mb-3">
+                                                <div class="row align-items-center">
+                                                    <div class="col-auto">
+                                                        <a href="#" class="user-avatar rounded bordered">
+                                                            <img class="circle-img p1" alt="Image" src="https://www.gamelab.id/uploads/report/project_21278/21278_20250324_111921.jpg" >
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-auto px-2">
+                                                        <h4 class="fs-6 mb-1">Author</h4>
+                                                        <span class="small text-muted">Lorem Ipsun</span>
+                                                    </div>
+                                                    <div class="col text-end">
+                                                        <button type="button" class="btn btn-outline-success follow-btn">+ Ikuti</button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                    
+                                            <li class="list-group-item bg-transparent border-bottom mb-3">
+                                                <div class="row align-items-center">
+                                                    <div class="col-auto">
+                                                        <a href="#" class="user-avatar rounded bordered">
+                                                            <img class="circle-img " alt="Image" src="https://www.gamelab.id/uploads/report/project_21278/21278_20250324_143720.jpg">
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-auto px-2">
+                                                        <h4 class="fs-6 mb-1">Author</h4>
+                                                        <span class="small text-muted">Lorem ipsun</span>
+                                                    </div>
+                                                    <div class="col text-end">
+                                                        <button type="button" class="btn btn-outline-success follow-btn">+ Ikuti</button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            
+                                            <li class="list-group-item bg-transparent border-bottom mb-3">
+                                                <div class="row align-items-center">
+                                                    <div class="col-auto">
+                                                        <a href="#" class="user-avatar rounded bordered">
+                                                            <img class="circle-img p1" alt="Image" src="https://www.gamelab.id/uploads/report/project_21278/21278_20250324_143823.jpg" >
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-auto px-2">
+                                                        <h4 class="fs-6 mb-1">Author</h4>
+                                                        <span class="small text-muted">Lorem ipsun</span>
+                                                    </div>
+                                                    <div class="col text-end">
+                                                        <button type="button" class="btn btn-outline-success follow-btn">+ Ikuti</button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item bg-transparent border-bottom mb-3">
+                                                <div class="row align-items-center">
+                                                    <div class="col-auto">
+                                                        <a href="#" class="user-avatar rounded bordered">
+                                                           <img class="circle-img p1" alt="Image" src="https://www.gamelab.id/uploads/report/project_21278/21278_20250324_143918.jpg" >
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-auto px-2">
+                                                        <h4 class="fs-6 mb-1">Author</h4>
+                                                        <span class="small text-muted">Lorem ipsun</span>
+                                                    </div>
+                                                    <div class="col text-end">
+                                                        <button type="button" class="btn btn-outline-success follow-btn">+ Ikuti</button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="berita-baru md-4">
+                            <div class="new-api-artikel">
+                                <div class="card berita-pilihan">
+                                    <h4 class="title-artikel2 text-center">Artikel Populer</h4>
+                                    <div class="card-body">
+                                        <!-- Container untuk berita -->
+                                        <div id="news-container" class="row g-3 berita-baru">
+                                            <!-- Berita akan dimuat di sini -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </section>
+        
+        
+        <!-- progress bar -->
+        <div class="progress-bar-container">
+          <div class="progress-bar"></div>
+        </div>
+       
+        <!-- progress circle -->
+        <div class="progress-circle-container">
+          <svg class="progress-circle" viewBox="0 0 100 100">
+            <circle class="progress-background" cx="50" cy="50" r="45"></circle>
+            <circle class="progress-circle-bar" cx="50" cy="50" r="45"></circle>
+          </svg>
+          <div class="scroll-to-top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 19V5M5 12l7-7 7 7" />
+            </svg>
+          </div>
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <!--modal-->
+        <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="registrationModalLabel">Form Pendaftaran</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="registrationForm">
+                            <div class="mb-3">
+                                <label for="full-name" class="col-form-label">Nama Lengkap:</label>
+                                <input type="text" class="form-control" id="full-name" placeholder="Masukkan nama lengkap" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="col-form-label">Email:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Masukkan email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="col-form-label">Password:</label>
+                                <input type="password" class="form-control" id="password" placeholder="Masukkan password" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="cancelButton">Batal</button>
+                        <button type="button" class="btn btn-primary" id="registerButton">Daftar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            
+            document.getElementById('cancelButton').addEventListener('click', function() {
+                Swal.fire({
+                    title: 'Batal',
+                    text: 'Anda menekan tombol Batal. Form pendaftaran akan ditutup.',
+                    icon: 'info',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // tutup modal
+                        const modal = bootstrap.Modal.getInstance(document.getElementById('registrationModal'));
+                        modal.hide();
+                    }
+                });
+            });
+        
+            
+            document.getElementById('registerButton').addEventListener('click', function() {
+                // validasi form 
+                const fullName = document.getElementById('full-name').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+        
+                if (fullName && email && password) {
+                    Swal.fire({
+                        title: 'Berhasil!',
+                        text: 'Pendaftaran berhasil! Terima kasih telah mendaftar.',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            const modal = bootstrap.Modal.getInstance(document.getElementById('registrationModal'));
+                            modal.hide();
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Harap lengkapi semua field sebelum mendaftar.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            });
+        </script>
+        
+<!--footer-->
+    <section class="footer">
+        <div class="container py-5">
+            <div class="row align-items-start">
+                <!-- mulai -->
+                <div class="col-md-6 footer-logo d-flex flex-column mb-4 mb-md-0">
+                    <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250328_084909.png" alt="logo_news" class="footer-logo-img mb-3" />
+                    <p class="footer-deskripsi">
+                        <strong>Afsin News</strong> adalah portal berita online yang menyajikan informasi terkini, akurat, dan beragam dari dunia politik, ekonomi, teknologi, hingga gaya hidup. Kami berkomitmen menjadi sumber berita terpercaya yang memberikan wawasan cerdas dan relevan bagi para pembaca. Tetap terhubung dengan kabar terbaru bersama Afsin News!
+                    </p>
+                </div>
+                <div class="col-md-3 two-footer footer-kontak mb-4 mb-md-0">
+                    <h5>Tautan Cepat</h5>
+                    <ul class="nav flex-column">
+                        <li><a href="Main-page">Beranda</a></li>
+                        <li><a href="about-afsin">Tentang Kami</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-kontak mb-4 mb-md-0">
+                    <h5>Tautan Cepat</h5>
+                    <ul class="nav flex-column">
+                        <li><a href="Main-page">Beranda</a></li>
+                        <li><a href="about-afsin">Tentang Kami</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- garis -->
+            <hr class="my-4" />
+            
+            <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center py-3">
+                <div class="col-12 col-md-auto order-2 order-md-1 text-center text-md-start mb-md-0 footer-company" >
+                    <span class="text-white-50">&copy; <span id="current-year">2025</span> Afsin. All Rights Reserved.</span>
+                </div>
+                
+                <div class="col-12 col-md-auto order-1 order-md-2 text-center mb-md-0 footer-sosmed">
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/educagamelab" class="medsos-link "  target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/gamelab.id" class="medsos-link "  target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/gamelab-indonesia/" class="medsos-link " target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/@gamelabindonesia" class="medsos-link " target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  
+
+
+<style>
+    .medsos-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        transition: all 0.3s ease;
+    }
+    
+    .medsos-link:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+        color: white;
+        text-decoration: none;
+    }
+    
+    .text-white-50 {
+        color: rgba(255, 255, 255, 0.5);
+    }
+</style>
+
+        
+        
+       
+    
+    <script src="script1.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    
+    
+</body>
+</html>
