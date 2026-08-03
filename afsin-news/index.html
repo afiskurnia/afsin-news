@@ -41,13 +41,13 @@
                     
                     <!-- Mobile Icons (Search and Login) -->
                     <div class="mobile-icons d-lg-none">
-                        <button class="btn btn-link search-icon" type="button" id="mobileSearchBtn">
+                        <button class="btn btn-link search-icon fa fa-search" type="button" id="mobileSearchBtn" aria-label="Cari" title="Cari">
                             <i class="bi bi-search"></i>
                         </button>
-                        <button class="btn btn-link login-icon" type="button" data-bs-toggle="modal" data-bs-target="#registrationModal">
+                        <button class="btn btn-link login-icon" type="button" data-bs-toggle="modal" data-bs-target="#registrationModal" aria-label="Masuk atau Daftar" title="Masuk atau Daftar">
                             <i class="bi bi-box-arrow-in-right"></i>
                         </button>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Buka menu navigasi" title="Buka menu navigasi">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                     </div>
@@ -91,7 +91,7 @@
                     </div>
                     
                     <!-- form-search mobile -->
-                    <div class="mobile-search-form d-lg-none" id="mobileSearchForm" style="display: none;">
+                    <div class="mobile-search-form d-lg-none" id="mobileSearchForm" >
                         <form id="mobileSearchFormInner" class="d-flex" role="search">
                             <input id="mobileSearchInput" class="form-control me-2" type="search" placeholder="Cari" aria-label="Search">
                             <button class="btn btn-outline-primary" type="submit">Cari</button>
@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h1 class="carousel-title text-left">Jumbo Jadi Film Animasi Asia Tenggara Terlaris Sepanjang Masa</h1>
                         <p class="carousel-isi text-left">Jumbo menjadi film animasi Asia Tenggara terlaris sepanjang masa. Film animasi Indonesia tersebut telah mengumpulkan lebih dari US$8 juta hanya dari box office lokal..</p>
                         <div class="gap-2 d-md-block carousel-buttons">
-                            <a href="https://www.cnnindonesia.com/hiburan/20250415120255-220-1218924/jumbo-jadi-film-animasi-asia-tenggara-terlaris-sepanjang-masa" class="btn carousel-button" target="_blank">Selengkapnya</a>
+                            <a href="https://www.cnnindonesia.com/hiburan/20250415120255-220-1218924/jumbo-jadi-film-animasi-asia-tenggara-terlaris-sepanjang-masa" class="btn carousel-button" target="_blank" rel="noopener">Selengkapnya</a>
                             <a href="#berita" class="btn carousel-button-one">Berita lainnya</a>
                         </div>
                     </div>
@@ -309,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h1 class="carousel-title text-left">Kemenpora Cairkan Dana Platnas 13 Cabor, Total Rp420 Miliar</h1>
                         <p class="carousel-isi text-left">Kemenpora mencairkan dana pemusatan latihan terhadap 13 cabang olahraga dan dua kejuaraan dunia dengan total Rp420 miliar. Penandatanganan dokumen bantuan pemerintah terhadap pengurus cabor dilakukan di Kantor Kemenpora, Jakarta, Senin (14/4) </p>
                         <div class="gap-2 d-md-block carousel-buttons">
-                            <a href="https://www.cnnindonesia.com/olahraga/20250414144006-178-1218599/kemenpora-cairkan-dana-pelatnas-13-cabor-total-rp420-miliar" class="btn carousel-button" target="_blank">Selengkapnya</a>
+                            <a href="https://www.cnnindonesia.com/olahraga/20250414144006-178-1218599/kemenpora-cairkan-dana-pelatnas-13-cabor-total-rp420-miliar" class="btn carousel-button" target="_blank" rel="noopener">Selengkapnya</a>
                             <a href="#berita" class="btn carousel-button-one">Berita lainnya</a>
                         </div>
                     </div>
@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h1 class="carousel-title text-left">Indonesia Jadi Tuan Rumah Forum Pariwisata Global CAP-CSA 2025</h1>
                         <p class="carousel-isi">Indonesia dipastikan siap menjadi tuan rumah ajang Joint Commission Meeting untuk Komisi Asia Timur dan Pasifik (CAP) dan Komisi Asia Selatan (CSA) ke-37 yang akan digelar di Hotel Mulia Senayan Jakarta pada 15-16 April 2025.</p>
                         <div class="gap-2 d-md-block carousel-buttons">
-                            <a href="https://www.cnnindonesia.com/ekonomi/20250414194432-625-1218718/indonesia-jadi-tuan-rumah-forum-pariwisata-global-cap-csa-2025" class="btn carousel-button" target="_blank">Selengkapnya</a>
+                            <a href="https://www.cnnindonesia.com/ekonomi/20250414194432-625-1218718/indonesia-jadi-tuan-rumah-forum-pariwisata-global-cap-csa-2025" class="btn carousel-button" target="_blank" rel="noopener">Selengkapnya</a>
                             <a href="#berita" class="btn carousel-button-one">Berita lainnya</a>
                         </div>
                     </div>
@@ -603,7 +603,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="kategori mt-4 mobile-kategori">
                             <h2 class="satu mobile-section-title">Kategori</h2>
                             <div class="list-kategori mobile-list-kategori">
-                                <ul class="mobile-kategori-list" style="list-style-type:disc;">
+                                <ul class="mobile-kategori-list">
                                     <li class="list-li mobile-list-li">Healty</li>
                                     <li class="list-li mobile-list-li">Science</li>
                                     <li class="list-li mobile-list-li">Bussiness</li>
@@ -756,6 +756,7 @@ document.addEventListener('DOMContentLoaded', function() {
     margin-bottom: 0.75rem;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     transition: color 0.2s ease;
@@ -806,6 +807,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .news-card-kategori .card-title {
         font-size: 1rem;
         -webkit-line-clamp: 2;
+        line-clamp: 2;
     }
     .news-card-kategori {
         margin-bottom: 15px;
@@ -850,7 +852,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <p class="card-text text-secondary">
                                     Jumbo menjadi film animasi Asia Tenggara terlaris sepanjang masa. Film animasi Indonesia tersebut telah mengumpulkan lebih dari US$8 juta hanya dari box office lokal..
                                 </p>
-                                <a href="https://www.cnnindonesia.com/hiburan/20250415120255-220-1218924/jumbo-jadi-film-animasi-asia-tenggara-terlaris-sepanjang-masa" class="btn btn-barita-terpopuler" target="_blank">Baca Selengkapnya</a>
+                                <a href="https://www.cnnindonesia.com/hiburan/20250415120255-220-1218924/jumbo-jadi-film-animasi-asia-tenggara-terlaris-sepanjang-masa" class="btn btn-barita-terpopuler" target="_blank" rel="noopener">Baca Selengkapnya</a>
                             </div>
                         </div>
                     </div>
@@ -864,7 +866,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250415_105807.png" class="img-fluid h-100 popular-news-img" alt="Berita Populer 2">
                             </div>
                             <div class="col-md-8">
-                                <a href="https://www.cnnindonesia.com/olahraga/20250415102614-142-1218861/piala-asia-u-17-final-panas-korea-selatan-vs-korea-utara-bisa-terjadi" class="link-artikel-2" target="_blank">
+                                <a href="https://www.cnnindonesia.com/olahraga/20250415102614-142-1218861/piala-asia-u-17-final-panas-korea-selatan-vs-korea-utara-bisa-terjadi" class="link-artikel-2" target="_blank" rel="noopener">
                                 <div class="card-body">
                                     <span class="badge badge-orange mb-2">Trending #2</span>
                                     <h5 class="card-title sub-terpopuler">Piala Asia U-17: Final Panas Korea Selatan vs Korea Utara Bisa Terjadi</h5>
@@ -884,7 +886,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250415_092231.jpeg" class="img-fluid h-100 popular-news-img" alt="Berita Populer 2">
                             </div>
                             <div class="col-md-8">
-                                <a href="https://www.cnnindonesia.com/olahraga/20250414144006-178-1218599/kemenpora-cairkan-dana-pelatnas-13-cabor-total-rp420-miliar" class="link-artikel-2" target="_blank">
+                                <a href="https://www.cnnindonesia.com/olahraga/20250414144006-178-1218599/kemenpora-cairkan-dana-pelatnas-13-cabor-total-rp420-miliar" class="link-artikel-2" target="_blank" rel="noopener">
                                 <div class="card-body">
                                     <span class="badge badge-gold mb-2">Trending #3</span>
                                     <h5 class="card-title sub-terpopuler">Kemenpora Cairkan Dana Platnas 13 Cabor, Total Rp420 Miliar</h5>
@@ -904,7 +906,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <img src="https://www.gamelab.id/uploads/report/project_21278/21278_20250415_092209.jpeg" class="img-fluid h-100 popular-news-img" alt="Berita Populer 2">
                             </div>
                             <div class="col-md-8">
-                                <a href="https://www.cnnindonesia.com/ekonomi/20250414194432-625-1218718/indonesia-jadi-tuan-rumah-forum-pariwisata-global-cap-csa-2025" class="link-artikel-2" target="_blank">
+                                <a href="https://www.cnnindonesia.com/ekonomi/20250414194432-625-1218718/indonesia-jadi-tuan-rumah-forum-pariwisata-global-cap-csa-2025" class="link-artikel-2" target="_blank" rel="noopener">
                                 <div class="card-body">
                                     <span class="badge badge-blue mb-2">Trending #4</span>
                                     <h5 class="card-title sub-terpopuler">Indonesia Jadi Tuan Rumah Forum Pariwisata Global CAP-CSA 2025</h5>
@@ -958,10 +960,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 <div class="col-12 col-md-auto order-1 order-md-2 text-center mb-md-0 footer-sosmed">
                     <div class="social-icons">
-                        <a href="https://www.facebook.com/educagamelab" class="medsos-link "  target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/gamelab.id" class="medsos-link "  target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/gamelab-indonesia/" class="medsos-link " target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.youtube.com/@gamelabindonesia" class="medsos-link " target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/educagamelab" class="medsos-link "  target="_blank" aria-label="Facebook" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/gamelab.id" class="medsos-link "  target="_blank" aria-label="Instagram" rel="noopener"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/gamelab-indonesia/" class="medsos-link " target="_blank" aria-label="LinkedIn" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/@gamelabindonesia" class="medsos-link " target="_blank" aria-label="YouTube" rel="noopener"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
@@ -1022,6 +1024,7 @@ document.addEventListener('DOMContentLoaded', function() {
         right: 0;
         bottom: 0;
         background: rgba(255, 255, 255, 0.5);
+        -webkit-backdrop-filter: blur(0px);
         backdrop-filter: blur(0px);
         z-index: 0;
     }
