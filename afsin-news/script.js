@@ -35,7 +35,7 @@ function fetchNews() {
     var newsContainer = document.getElementById("news-container");
     var marqueeText = document.getElementById("marqueeText"); // elemen marquee
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://api-berita-indonesia.vercel.app/kumparan/terbaru/", true);
+    xhr.open("GET", "https://app.zenserp.com/api/v2/search", true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var data = JSON.parse(xhr.responseText);
@@ -87,7 +87,7 @@ function renderNews(page) {
             '<div class="card h-100 card-hover-effect">' + 
             '<img src="' + news.thumbnail + '" class="card-img-top news-image" alt="' + news.title + '" style="object-fit:cover;">' + 
             '<div class="card-body">' +
-            '<a href="' + news.link + '" class="link-artikel" target="_blank">' +
+            '<a href="' + news.link + '" class="link-artikel" target="_blank" rel="noopener">' +
             '<h5 class="card-title">' + news.title + '</h5>' +
             '<p class="text-muted"><small>' + articleDate + '</small></p>' +
             '<p class="card-text">' + news.description + '</p>' +
