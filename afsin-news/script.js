@@ -189,13 +189,15 @@ document.addEventListener("DOMContentLoaded", function () {
 //  section2
 const berita = [
     {
+        
         id: 1,
-        kategori: ["Healty"],
+        kategori: ["Healty"], // (Tips: Koreksi ejaan 'Healthy' jika diperlukan)
         judul: "Preserved Vegetable Food: Delicious, Long-Lasting, and Healthy",
         deskripsi: "Plant-based preserves have become an increasingly popular choice among foodies and health-conscious eaters. In addition to offering delicious flavors, plant-based preserves also have the advantage of being long-lasting, allowing them to be stored for long periods of time without losing their quality.",
-        gambar: "https://cdnwpedutorenews.gramedia.net/wp-content/uploads/2024/12/06090836/Screenshot-2024-12-06-090755-810x519.png",
+        gambar: "https://blog.thompson-morgan.com/wp-content/uploads/2022/07/20220607_tm_overview_of_preserved_fruits.jpg",
         tanggal: "22 Maret 2025",
         link: "artikel1/index1.html"
+
     },
     {
         id: 2,
